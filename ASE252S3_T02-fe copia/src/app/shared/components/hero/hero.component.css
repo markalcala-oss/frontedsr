@@ -1,0 +1,132 @@
+.hero {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding: 60px 80px;
+  overflow: hidden;
+}
+
+/* CONTENIDO */
+.hero-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* TEXTO */
+.hero-text {
+  flex: 1;
+  min-width: 320px;
+}
+
+/* BADGE */
+.badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  backdrop-filter: blur(5px);
+}
+
+/* TITULO */
+.hero-text h1 {
+  font-size: 52px;
+  line-height: 1.2;
+  color: white;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+/* TEXTO */
+.hero-text p {
+  color: #e0e7ff;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  max-width: 550px;
+}
+
+/* BOTONES */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* BOTÓN */
+.hero-buttons button {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 12px;
+  background: white;
+  color: #4f46e5;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 15px;
+}
+
+/* HOVER */
+.hero-buttons button:hover {
+  transform: translateY(-3px);
+}
+
+/* BOTÓN SECUNDARIO */
+.btn-secondary {
+  background: rgba(255,255,255,0.15) !important;
+  color: white !important;
+  border: 1px solid rgba(255,255,255,0.3) !important;
+}
+
+/* IMAGEN */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 320px;
+}
+
+/* IMG */
+.hero-image img {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 24px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  object-fit: cover;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+
+  .hero {
+    padding: 50px 25px;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 38px;
+  }
+
+  .hero-text p {
+    margin: auto auto 30px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+}

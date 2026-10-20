@@ -1,0 +1,42 @@
+<div class="teacher-workspace">
+  <ng-container *ngIf="selectedAssignment as assignment; else assignmentList">
+    <header class="salon-overview" id="resumen">
+      <div class="salon-title">
+        <button type="button" class="back-button" (click)="returnToAssignments()">← Mis salones</button>
+        <p class="eyebrow">GESTIÓN ACADÉMICA · {{ assignment.schoolYear }}</p>
+        <h2>{{ assignment.grade }} {{ assignment.section }}</h2>
+      </div>
+      <div class="salon-facts">
+        <div><span>ÁREA</span><strong>{{ assignment.area }}</strong></div>
+        <div><span>ESTUDIANTES</span><strong>{{ assignment.studentCount }}</strong></div>
+        <div><span>PERIODO</span><strong>I bimestre</strong></div>
+      </div>
+    </header>
+
+    <app-class-assessment-matrix
+      [assignmentTitle]="assignment.grade + ' ' + assignment.section"
+      [area]="assignment.area"
+      [schoolYear]="assignment.schoolYear">
+    </app-class-assessment-matrix>
+  </ng-container>
+
+  <ng-template #assignmentList>
+    <div class="metrics-grid">
+      <article class="metric-panel primary-metric"><span>Mis asignaciones</span><strong>{{ assignments.length }}</strong><small>Área: Matemática · muestra</small></article>
+      <article class="metric-panel"><span>Estudiantes asignados</span><strong>{{ totalStudents }}</strong><small>Distribuidos por salón</small></article>
+      <article class="metric-panel"><span>Pendientes de registro</span><strong class="attention-number">{{ pendingCount }}</strong><small>En todos tus salones</small></article>
+    </div>
+
+    <section id="salones" aria-labelledby="assignments-title">
+      <div class="list-heading"><p class="eyebrow">ÁREA A CARGO · MATEMÁTICA</p><h2 id="assignments-title">Mis salones</h2><p>Selecciona un salón para revisar y registrar sus evaluaciones.</p></div>
+      <div class="assignment-grid">
+        <article class="assignment-card" *ngFor="let assignment of assignments">
+          <div class="assignment-card-top"><span class="assignment-area">{{ assignment.area }}</span><span>{{ assignment.schoolYear }}</span></div>
+          <h3>{{ assignment.grade }} {{ assignment.section }}</h3>
+          <p>Secundaria · {{ assignment.studentCount }} estudiantes</p>
+          <button type="button" class="open-class-button" (click)="openAssignment(assignment.id)">Abrir salón <span>→</span></button>
+        </article>
+      </div>
+    </section>
+  </ng-template>
+</div>

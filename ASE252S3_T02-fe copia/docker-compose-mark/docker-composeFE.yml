@@ -1,0 +1,11 @@
+# docker compose -f docker-compose-mark/docker-composeFE.yml up -d
+# docker compose -f docker-compose-mark/docker-composeFE.yml down
+version: '3'
+
+services:
+  frontend:
+    image: markalcala/angular_colegio:v1.0
+    container_name: angular_colegio
+    ports:
+      - "4200:80"
+    restart: always

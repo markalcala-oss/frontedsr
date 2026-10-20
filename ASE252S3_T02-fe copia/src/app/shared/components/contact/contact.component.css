@@ -1,0 +1,80 @@
+.titulo {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 32px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Línea decorativa debajo */
+.titulo::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: #6366f1;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 5px;
+}
+/* Formulario compacto */
+form {
+  width: 35%;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+/* Inputs y textarea */
+input,
+textarea {
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Textarea */
+textarea {
+  height: 90px;
+  resize: none;
+}
+
+/* Botón */
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: gray;
+}
+
+/* Mensajes de error */
+small {
+  color: red;
+  font-size: 12px;
+}
+
+/* Validaciones */
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border: 2px solid red;
+}
+
+input.ng-valid.ng-touched,
+textarea.ng-valid.ng-touched {
+  border: 2px solid green;
+}

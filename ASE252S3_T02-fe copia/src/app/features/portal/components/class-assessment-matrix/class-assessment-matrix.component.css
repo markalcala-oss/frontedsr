@@ -1,0 +1,34 @@
+:host { display: block; }
+.assessment-matrix { border: 1px solid #CBD5E1; background: #fff; }
+.matrix-heading { min-height: 68px; padding: 13px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid #E2E8F0; }
+.eyebrow { margin: 0 0 6px; color: #991B1B; font-size: 9px; font-weight: 750; letter-spacing: .8px; }
+.matrix-heading h3 { margin: 0; color: #0F172A; font-size: 15px; }
+.period-label { padding: 7px 9px; border: 1px solid #CBD5E1; color: #334155; font-size: 10px; white-space: nowrap; }
+.symbol-note { padding: 8px 14px; color: #64748B; background: #F8FAFC; font-size: 9px; }
+.matrix-scroll { max-height: min(65vh, 680px); overflow: auto; }
+.matrix-table { width: max-content; min-width: 100%; border-collapse: separate; border-spacing: 0; text-align: center; }
+.matrix-table th,.matrix-table td { padding: 5px; border-right: 1px solid #94A3B8; border-bottom: 1px solid #CBD5E1; font-size: 9px; }
+.competency-row th { min-width: 110px; color: #0F172A; background: #DCE6F1; font-size: 9px; text-transform: uppercase; }
+.unit-row th { color: #0F172A; background: #EEF3F8; }
+.unit-heading { min-width: 160px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.unit-heading button { border: 0; color: #991B1B; background: transparent; cursor: pointer; font-size: 9px; font-weight: 700; white-space: nowrap; }
+.session-row th { width: 150px; min-width: 150px; height: 54px; padding: 4px 6px; color: #334155; background: #F8FAFC; font-weight: 600; vertical-align: top; }
+.session-number { display: block; margin-bottom: 4px; color: #991B1B; font-size: 9px; font-weight: 750; text-align: left; }
+.session-row input { width: 100%; height: 27px; padding: 0 6px; border: 1px solid #CBD5E1; color: #1E293B; background: #fff; font: inherit; font-size: 9px; font-weight: 400; }
+.session-row input:focus { border-color: #991B1B; outline: 2px solid rgba(153, 27, 27, .12); }
+.session-row input::placeholder { color: #94A3B8; }
+.final-column,.conclusion-column { background: #DCE6F1 !important; }
+.student-column { position: sticky; left: 0; z-index: 2; min-width: 190px; max-width: 190px; color: #0F172A; background: #fff; text-align: left; }
+.competency-row .student-column { z-index: 4; color: #fff; background: #1E293B; }
+.student-name { font-size: 10px !important; font-weight: 650; white-space: nowrap; }
+.session-cell { width: 150px; min-width: 150px; height: 40px; padding: 4px !important; border-right: 1px solid #94A3B8 !important; }
+.symbol-button { width: 28px; height: 28px; padding: 0; border: 1px solid transparent; border-radius: 50%; color: #64748B; background: transparent; cursor: pointer; font-size: 15px; line-height: 26px; }
+.symbol-empty { border-color: #CBD5E1; background: #fff; }
+.symbol-button:hover { outline: 1px solid #94A3B8; }
+.symbol-● { color: #A16207; background: #FDE68A; }
+.symbol-✓ { color: #166534; background: #DCFCE7; }
+.symbol-◆ { color: #B91C1C; background: #FEE2E2; }
+.final-select { width: 52px; height: 30px; border: 1px solid #CBD5E1; color: #0F172A; background: #fff; font-size: 10px; font-weight: 700; }
+.conclusion-input { width: 180px; min-height: 38px; padding: 5px; border: 1px solid #CBD5E1; color: #334155; font: inherit; font-size: 9px; resize: vertical; }
+.matrix-footnote { margin: 0; padding: 10px 14px; border-top: 1px solid #E2E8F0; color: #64748B; font-size: 9px; }
+@media (max-width: 680px) { .matrix-heading { align-items: flex-start; flex-direction: column; } .matrix-scroll { max-height: 60vh; } .student-column { min-width: 145px; max-width: 145px; } }

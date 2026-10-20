@@ -1,0 +1,20 @@
+ #benefits {
+  background-color: #eef2ff;
+  padding: 80px 20px;
+}
+
+
+.benefits-list {
+  max-width: 500px;
+  margin: auto;
+  text-align: left;
+}
+
+
+.benefit-item {
+  background: white;
+  margin: 10px 0;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border-left: 5px solid #6366f1;
+}  

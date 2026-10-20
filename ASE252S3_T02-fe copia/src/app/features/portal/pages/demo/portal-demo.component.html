@@ -1,0 +1,75 @@
+<div class="portal-shell">
+  <header class="topbar">
+    <a routerLink="/" class="brand">
+      <img src="/assets/images/santarita.webp" alt="" class="brand-logo">
+      <span><strong>Colegio Santa Rita</strong><small>PORTAL ACADÉMICO · SECUNDARIA</small></span>
+    </a>
+    <div class="topbar-tools">
+      <span class="demo-chip"><i></i> VISTA DEMO</span>
+      <span class="user-avatar">{{ activeRole === 'ALUMNO' ? 'VG' : 'JP' }}</span>
+      <span class="user-info"><strong>{{ activeRole === 'ALUMNO' ? 'Valeria Gómez' : 'Juan Pérez' }}</strong><small>{{ activeRole === 'ALUMNO' ? 'Estudiante · 3.° A' : 'Docente · Matemática' }}</small></span>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <div class="content-wrap">
+      <div class="page-heading" id="resumen">
+        <div>
+          <p class="eyebrow">COLEGIO SANTA RITA <span>/</span> SECUNDARIA</p>
+          <h1>{{ activeRole === 'ALUMNO' ? 'Tu recorrido académico' : 'Seguimiento académico' }}</h1>
+          <p class="heading-copy">{{ activeRole === 'ALUMNO' ? 'Consulta tus resultados finales por curso y competencia.' : 'Revisa cursos asignados y el estado de las evaluaciones.' }}</p>
+        </div>
+
+        <div class="role-switch" role="tablist" aria-label="Cambiar vista de demostración">
+          <button type="button" role="tab" [attr.aria-selected]="activeRole === 'ALUMNO'" [class.selected]="activeRole === 'ALUMNO'" (click)="selectRole('ALUMNO')">Alumno</button>
+          <button type="button" role="tab" [attr.aria-selected]="activeRole === 'DOCENTE'" [class.selected]="activeRole === 'DOCENTE'" (click)="selectRole('DOCENTE')">Docente</button>
+        </div>
+      </div>
+
+      <section *ngIf="activeRole === 'ALUMNO'" aria-labelledby="student-summary-title">
+        <h2 id="student-summary-title" class="visually-hidden">Resumen del alumno</h2>
+        <div class="metric-grid">
+          <article class="metric-panel primary-metric">
+            <span class="metric-label">Matrícula actual</span>
+            <strong class="metric-number">3.° A</strong>
+            <span class="metric-footnote">Grado y sección · muestra</span>
+          </article>
+          <article class="metric-panel">
+            <span class="metric-label">Periodo consultado</span>
+            <strong class="metric-number">I</strong>
+            <span class="metric-footnote">I bimestre · muestra</span>
+          </article>
+          <article class="metric-panel">
+            <span class="metric-label">Áreas con evaluación</span>
+            <strong class="metric-number">{{ studentEvaluations.length }}</strong>
+            <span class="metric-footnote">Resultados finales de ejemplo</span>
+          </article>
+        </div>
+
+        <section class="data-section" id="evaluaciones" aria-labelledby="student-results-title">
+          <div class="section-heading">
+            <div><p class="eyebrow">RENDIMIENTO</p><h2 id="student-results-title">Resultados por competencia</h2></div>
+            <button type="button" class="period-select" disabled aria-label="Periodo seleccionado">I bimestre <span>⌄</span></button>
+          </div>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>Área</th><th>Competencia</th><th>Nivel de logro</th><th>Periodo</th><th>Conclusión descriptiva</th></tr></thead>
+              <tbody>
+                <tr *ngFor="let evaluation of studentEvaluations">
+                  <td class="course-cell">{{ evaluation.area }}</td><td>{{ evaluation.competence }}</td>
+                  <td><span class="level-badge" [ngClass]="'level-' + evaluation.level.toLowerCase()">{{ evaluation.level }}</span></td>
+                  <td>{{ evaluation.period }}</td><td class="conclusion-cell">{{ evaluation.conclusion }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="table-note">Las calificaciones de este prototipo son ilustrativas. La escala y los datos reales dependen de la API.</p>
+        </section>
+      </section>
+
+      <app-teacher-workspace *ngIf="activeRole === 'DOCENTE'"></app-teacher-workspace>
+
+      <footer class="workspace-footer">Colegio Santa Rita <span>·</span> Gestión académica de Secundaria</footer>
+    </div>
+  </main>
+</div>

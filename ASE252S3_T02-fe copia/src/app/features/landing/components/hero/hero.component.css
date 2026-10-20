@@ -1,0 +1,920 @@
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+  position: relative;
+
+  min-height: calc(100vh - 88px);
+
+  display: flex;
+  align-items: center;
+
+  padding: 75px 0 80px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 82% 40%,
+      rgba(45, 156, 219, 0.08),
+      transparent 30%
+    ),
+    #ffffff;
+}
+
+
+/* ========================================
+   DECORACIÓN DE FONDO
+======================================== */
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  right: -330px;
+  top: -220px;
+
+  border: 1px solid rgba(45, 156, 219, 0.08);
+
+  border-radius: 50%;
+}
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  left: -200px;
+  bottom: -190px;
+
+  border: 1px solid rgba(242, 184, 75, 0.12);
+
+  border-radius: 50%;
+}
+
+
+/* ========================================
+   CONTENEDOR
+======================================== */
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+
+  width: min(1180px, calc(100% - 48px));
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 0.95fr;
+
+  align-items: center;
+
+  gap: 65px;
+}
+
+
+/* ========================================
+   CONTENIDO
+======================================== */
+
+.hero-content {
+  max-width: 600px;
+}
+
+
+/* ========================================
+   LABEL
+======================================== */
+
+.hero-label {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: #991B1B;
+
+  font-size: 10px;
+  font-weight: 750;
+
+  letter-spacing: 1.4px;
+}
+
+.hero-label span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #991B1B;
+
+  box-shadow:
+    0 0 0 4px rgba(242, 184, 75, 0.13);
+}
+
+
+/* ========================================
+   TÍTULO
+======================================== */
+
+.hero h1 {
+  margin: 22px 0 22px;
+
+  color: #0F172A;
+
+  font-size: clamp(46px, 5.2vw, 70px);
+
+  line-height: 1.03;
+
+  font-weight: 750;
+
+  letter-spacing: -3px;
+}
+
+.hero h1 span {
+  display: block;
+
+  color: #991B1B;
+}
+
+
+/* ========================================
+   TEXTO
+======================================== */
+
+.hero-content > p {
+  max-width: 520px;
+
+  margin: 0;
+
+  color: #66788A;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* ========================================
+   BOTONES
+======================================== */
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  margin-top: 32px;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 46px;
+
+  padding: 0 17px;
+
+  border-radius: 9px;
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 650;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* PRINCIPAL */
+
+.primary-button {
+  gap: 10px;
+
+  color: #ffffff;
+
+  background: #991B1B;
+
+  box-shadow:
+    0 8px 20px rgba(23, 105, 170, 0.18);
+}
+
+.primary-button span {
+  font-size: 16px;
+
+  transition: transform 0.25s ease;
+}
+
+.primary-button:hover {
+  background: #7f1d1d;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 25px rgba(23, 105, 170, 0.23);
+}
+
+.primary-button:hover span {
+  transform: translateX(3px);
+}
+
+
+/* SECUNDARIO */
+
+.secondary-button {
+  border: 1px solid #d9e6ee;
+
+  color: #526a7e;
+
+  background: #ffffff;
+}
+
+.secondary-button:hover {
+  color: #991B1B;
+
+  border-color: #a9d1e8;
+
+  background: #f7fbfd;
+
+  transform: translateY(-2px);
+}
+
+
+/* ========================================
+   NOTA
+======================================== */
+
+.hero-note {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 26px;
+
+  color: #8999a7;
+
+  font-size: 9px;
+}
+
+.note-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #DC2626;
+}
+
+
+/* ========================================
+   VISUAL
+======================================== */
+
+.hero-visual {
+  position: relative;
+
+  min-height: 500px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ========================================
+   CÍRCULOS DECORATIVOS
+======================================== */
+
+.visual-circle {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.circle-one {
+  width: 390px;
+  height: 390px;
+
+  border: 1px solid rgba(45, 156, 219, 0.12);
+}
+
+.circle-two {
+  width: 290px;
+  height: 290px;
+
+  border: 1px dashed rgba(242, 184, 75, 0.15);
+}
+
+
+/* ========================================
+   TARJETA PRINCIPAL
+======================================== */
+
+.school-card {
+  position: relative;
+  z-index: 3;
+
+  width: min(390px, 84%);
+
+  min-height: 370px;
+
+  padding: 25px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dceaf2;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #FFF7F7
+    );
+
+  box-shadow:
+    0 25px 60px rgba(23, 50, 77, 0.10);
+
+  animation: cardFloat 5s ease-in-out infinite;
+}
+
+@keyframes cardFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+
+/* ========================================
+   HEADER TARJETA
+======================================== */
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid #e3edf2;
+}
+
+.card-label {
+  color: #991B1B;
+
+  font-size: 8px;
+  font-weight: 750;
+
+  letter-spacing: 1.4px;
+}
+
+.card-year {
+  color: #98a7b3;
+
+  font-size: 8px;
+  font-weight: 650;
+}
+
+
+/* ========================================
+   CONTENIDO TARJETA
+======================================== */
+
+.card-content {
+  padding: 28px 4px;
+}
+
+.school-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 18px;
+
+  border-radius: 15px;
+
+  background: #991B1B;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 750;
+
+  box-shadow:
+    0 9px 20px rgba(23, 105, 170, 0.18);
+}
+
+.card-small-title {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #DC2626;
+
+  font-size: 8px;
+  font-weight: 750;
+
+  letter-spacing: 1.1px;
+}
+
+.card-content h2 {
+  margin: 0 0 12px;
+
+  color: #0F172A;
+
+  font-size: 27px;
+
+  line-height: 1.12;
+
+  letter-spacing: -1px;
+}
+
+.card-content h2 span {
+  display: block;
+
+  color: #991B1B;
+}
+
+.card-content p {
+  max-width: 270px;
+
+  margin: 0;
+
+  color: #7b8c99;
+
+  font-size: 10px;
+
+  line-height: 1.7;
+}
+
+
+/* ========================================
+   ESTADÍSTICAS
+======================================== */
+
+.card-stats {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  padding-top: 19px;
+
+  border-top: 1px solid #e3edf2;
+}
+
+.card-stats div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  padding-left: 13px;
+
+  border-left: 1px solid #e0eaf0;
+}
+
+.card-stats div:first-child {
+  padding-left: 0;
+
+  border-left: none;
+}
+
+.card-stats strong {
+  color: #0F172A;
+
+  font-size: 17px;
+
+  font-weight: 750;
+}
+
+.card-stats span {
+  color: #8b9aa6;
+
+  font-size: 8px;
+}
+
+
+/* ========================================
+   TARJETAS FLOTANTES
+======================================== */
+
+.floating-card {
+  position: absolute;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 12px 14px;
+
+  border: 1px solid #dfeaf0;
+
+  border-radius: 11px;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  box-shadow:
+    0 14px 30px rgba(23, 50, 77, 0.08);
+
+  backdrop-filter: blur(8px);
+}
+
+.floating-card strong {
+  display: block;
+
+  color: #29465f;
+
+  font-size: 9px;
+}
+
+.floating-card small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #91a0ac;
+
+  font-size: 7px;
+}
+
+
+/* ========================================
+   ICONO AMARILLO
+======================================== */
+
+.floating-icon {
+  width: 29px;
+  height: 29px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.floating-icon.yellow {
+  color: var(--color-red);
+
+  background: #FEE2E2;
+}
+
+
+/* ========================================
+   TARJETA EDUCACIÓN
+======================================== */
+
+.education-card {
+  top: 65px;
+  right: -5px;
+}
+
+
+/* ========================================
+   MINI GRÁFICO
+======================================== */
+
+.mini-chart {
+  width: 29px;
+  height: 29px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  gap: 2px;
+
+  padding: 6px;
+
+  box-sizing: border-box;
+
+  border-radius: 8px;
+
+  background: #FEE2E2;
+}
+
+.mini-chart i {
+  width: 3px;
+
+  border-radius: 3px;
+
+  background: #DC2626;
+}
+
+.mini-chart i:nth-child(1) {
+  height: 7px;
+}
+
+.mini-chart i:nth-child(2) {
+  height: 11px;
+}
+
+.mini-chart i:nth-child(3) {
+  height: 8px;
+}
+
+.mini-chart i:nth-child(4) {
+  height: 14px;
+}
+
+
+/* ========================================
+   TARJETA INNOVACIÓN
+======================================== */
+
+.innovation-card {
+  left: -10px;
+  bottom: 70px;
+}
+
+
+/* ========================================
+   PUNTOS DECORATIVOS
+======================================== */
+
+.decorative-dot {
+  position: absolute;
+
+  z-index: 4;
+
+  display: block;
+
+  border-radius: 50%;
+}
+
+.dot-yellow {
+  width: 10px;
+  height: 10px;
+
+  right: 32px;
+  bottom: 55px;
+
+  background: #991B1B;
+
+  box-shadow:
+    0 0 0 7px rgba(242, 184, 75, 0.10);
+}
+
+.dot-blue {
+  width: 6px;
+  height: 6px;
+
+  left: 55px;
+  top: 105px;
+
+  background: #DC2626;
+}
+
+/* ========================================
+   SCROLL
+======================================== */
+
+.hero-scroll {
+  position: absolute;
+
+  left: 50%;
+  bottom: 23px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: #9aa8b4;
+
+  font-size: 7px;
+  font-weight: 700;
+
+  letter-spacing: 1.3px;
+
+  transform: translateX(-50%);
+}
+
+.hero-scroll span {
+  width: 28px;
+  height: 1px;
+
+  background: #b9d6e6;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 950px) {
+
+  .hero {
+    min-height: auto;
+
+    padding: 80px 0 100px;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+  .hero-content {
+    max-width: 680px;
+  }
+
+  .hero-visual {
+    min-height: 440px;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 650px) {
+
+  .hero {
+    padding: 65px 0 80px;
+  }
+
+  .hero-container {
+    width: calc(100% - 32px);
+
+    gap: 45px;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+
+    letter-spacing: -2px;
+  }
+
+  .hero-content > p {
+    font-size: 13px;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+
+    flex-direction: column;
+
+    max-width: 320px;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+  }
+
+  .hero-visual {
+    min-height: 390px;
+  }
+
+  .school-card {
+    width: 88%;
+
+    min-height: 345px;
+
+    padding: 20px;
+  }
+
+  .education-card {
+    top: 30px;
+    right: -3px;
+  }
+
+  .innovation-card {
+    left: -3px;
+    bottom: 35px;
+  }
+
+  .hero-scroll {
+    display: none;
+  }
+}
+
+
+/* ========================================
+   MOBILE PEQUEÑO
+======================================== */
+
+@media (max-width: 390px) {
+
+  .hero-container {
+    width: calc(100% - 24px);
+  }
+
+  .hero h1 {
+    font-size: 37px;
+  }
+
+  .hero-visual {
+    min-height: 350px;
+  }
+
+  .school-card {
+    width: 92%;
+  }
+
+  .floating-card {
+    padding: 9px 10px;
+  }
+
+  .floating-card strong {
+    font-size: 8px;
+  }
+
+  .floating-card small {
+    font-size: 6px;
+  }
+}
+
+.hero {
+  background: radial-gradient(circle at 82% 40%, rgba(153, 27, 27, 0.07), transparent 30%), var(--color-surface);
+}
+
+.hero::before,
+.circle-one {
+  border-color: rgba(153, 27, 27, 0.12);
+}
+
+.hero::after,
+.circle-two {
+  border-color: rgba(153, 27, 27, 0.16);
+}
+
+.hero-label,
+.hero h1 span,
+.card-label,
+.card-small-title,
+.card-content h2 span {
+  color: var(--color-red);
+}
+
+.hero-label span,
+.note-dot,
+.dot-blue,
+.mini-chart i {
+  background: var(--color-red-bright);
+}
+
+.hero h1,
+.card-content h2,
+.card-stats strong {
+  color: var(--color-navy);
+}
+
+.primary-button,
+.school-icon {
+  border-radius: 6px;
+  background: var(--color-red);
+}
+
+.primary-button:hover {
+  background: var(--color-red-bright);
+}
+
+.secondary-button:hover {
+  border-color: var(--color-red);
+  color: var(--color-red);
+}
+
+.dot-yellow {
+  background: var(--color-red-bright);
+}

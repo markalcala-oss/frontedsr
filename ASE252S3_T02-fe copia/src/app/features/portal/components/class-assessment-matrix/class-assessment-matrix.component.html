@@ -1,0 +1,54 @@
+<section class="assessment-matrix" aria-label="Matriz de evaluación por sesiones">
+  <header class="matrix-heading">
+    <div><p class="eyebrow">{{ area }} · {{ assignmentTitle }} · {{ schoolYear }}</p><h3>Registro por competencia y sesión</h3></div>
+    <span class="period-label">I bimestre</span>
+  </header>
+
+  <div class="symbol-note">Cada celda es independiente y corresponde a una sesión. El significado de las marcas se confirmará con el colegio.</div>
+
+  <div class="matrix-scroll">
+    <table class="matrix-table">
+      <thead>
+        <tr class="competency-row">
+          <th class="student-column" rowspan="3">Apellidos y nombres</th>
+          <th *ngFor="let competency of unitsByCompetence" [attr.colspan]="sessionCount(competency) + 2" scope="colgroup">{{ competency.name }}</th>
+        </tr>
+        <tr class="unit-row">
+          <ng-container *ngFor="let competency of unitsByCompetence">
+            <th *ngFor="let unit of competency.units" [attr.colspan]="unit.sessions.length" scope="colgroup">
+              <div class="unit-heading"><span>{{ unit.name }}</span><button type="button" (click)="addSession(unit)">+ Sesión</button></div>
+            </th>
+            <th class="final-column" rowspan="2" scope="col">Nivel final</th>
+            <th class="conclusion-column" rowspan="2" scope="col">Conclusión</th>
+          </ng-container>
+        </tr>
+        <tr class="session-row">
+          <ng-container *ngFor="let competency of unitsByCompetence">
+            <ng-container *ngFor="let unit of competency.units">
+              <th class="session-header" *ngFor="let session of unit.sessions">
+                <span class="session-number">S{{ session }}</span>
+                <input type="text" maxlength="120" [value]="unit.descriptions[session]" (input)="updateSessionDescription(unit, session, $event)" [attr.aria-label]="'Nombre de sesión ' + session + ' de ' + competency.name" placeholder="Nombre de sesión">
+              </th>
+            </ng-container>
+          </ng-container>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of roster">
+          <th class="student-column student-name" scope="row">{{ student.name }}</th>
+          <ng-container *ngFor="let competency of unitsByCompetence">
+            <ng-container *ngFor="let unit of competency.units">
+              <td *ngFor="let session of unit.sessions" class="session-cell">
+                <button type="button" class="symbol-button" [ngClass]="'symbol-' + (getSessionSymbol(student, competency.id, unit.id, session) || 'empty')" [attr.aria-label]="'Cambiar marca de ' + (unit.descriptions[session] || 'sesión ' + session) + ' para ' + student.name + ', ' + competency.name" [title]="(unit.descriptions[session] || 'Sesión ' + session) + ' · ' + student.name" (click)="cycleSessionSymbol(student, competency.id, unit.id, session)">{{ getSessionSymbol(student, competency.id, unit.id, session) || '—' }}</button>
+              </td>
+            </ng-container>
+            <td><select class="final-select" [value]="student.records[competency.id].finalLevel" (change)="updateFinalLevel(student, competency.id, $event)" [attr.aria-label]="'Nivel final de ' + competency.name + ' para ' + student.name"><option value="">—</option><option *ngFor="let level of achievementLevels" [value]="level">{{ level }}</option></select></td>
+            <td><textarea class="conclusion-input" rows="2" [value]="student.records[competency.id].conclusion" (input)="updateConclusion(student, competency.id, $event)" [attr.aria-label]="'Conclusión de ' + competency.name + ' para ' + student.name"></textarea></td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="matrix-footnote">Demostración: las marcas, sesiones y niveles aún no se guardan en el backend.</p>
+</section>
